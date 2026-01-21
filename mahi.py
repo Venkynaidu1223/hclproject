@@ -6,8 +6,6 @@ init_db()
 def indu():
     with SessionLocal() as s:
         rows=s.query(Student).all()
-        
-        
         data = [r.to_dict() for r in rows]
         return jsonify(data), 200
 
